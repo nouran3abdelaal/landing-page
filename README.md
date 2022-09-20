@@ -1,14 +1,16 @@
 # Landing Page Project
 
 ## Table of Contents
-# Author: Nouran Khaled Aboelmagd
-# Technologies: HTML, CSS, JS 
-* [Instructions](#instructions)
 
-## Instructions
+# Author
 
-The starter project has some HTML and CSS styling to display a static version of the Landing Page project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
+ Nouran Khaled Aboelmagd
 
-To get started, open `js/app.js` and start building out the app's functionality
+# Description
 
-For specific, detailed instructions, look at the project instructions in the Udacity Classroom.
+In this project a navigation bar was bulit dynamically according to the number of sections exists in the HTML file. The selected section will have a different back ground color and also its corresponding link in the nav bar.
+
+# Technologies 
+
+HTML, CSS, JS 
+
