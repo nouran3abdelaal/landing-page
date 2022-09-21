@@ -1,48 +1,11 @@
-/**
- * 
- * Manipulating the DOM exercise.
- * Exercise programmatically builds navigation,
- * scrolls to anchors from navigation,
- * and highlights section in viewport upon scrolling.
- * 
- * Dependencies: None
- * 
- * JS Version: ES2015/ES6
- * 
- * JS Standard: ESlint
- * 
- */
-
-/**
- * Comments should be present at the beginning of each procedure and class.
- * Great to have comments before crucial code sections within the procedure.
- */
-
-/**
- * Define Global Variables
- * 
- */
-
-
-/**
- * End Global Variables
- * Start Helper Functions
- * 
- */
-
-
-
-/**
- * End Helper Functions
- * Begin Main Functions
- * 
- */
-
-// build the nav bar by creating a number of achor tags in li correspond to the number of sections in the html file
 const myDocFrag = document.createDocumentFragment();
+const sections = document.querySelectorAll("section"); // Getting all the sections
+const nav_list = document.querySelector("#navbar__list"); // Getting the navbar list
 
-const sections = document.querySelectorAll("section");
-const nav_list = document.querySelector("#navbar__list");
+/*
+build the nav bar by creating a number of achor tags in li elements
+correspond to the number of sections in the html file
+*/
 for (const section of sections) {
     const a_tag = document.createElement("a");
     a_tag.href = `#${section.getAttribute("id")}`;
@@ -60,22 +23,22 @@ for (const section of sections) {
     myDocFrag.appendChild(li);
 }
 
-nav_list.appendChild(myDocFrag)
+nav_list.appendChild(myDocFrag);
 
 
 // Add class 'active' to section when near top of viewport and for the corresponding a link in the nav bar
-const observer = new IntersectionObserver(function obs(entities) {
+const observer = new IntersectionObserver(function (entities) {
     entities.forEach(entity => {
         //console.log("entity"+entity.target);
         entity.target.classList.toggle("active", entity.isIntersecting)
         document.querySelector(`a[href="#${entity.target.id}"]`).classList.toggle("active", entity.isIntersecting)
     })
 }, {
-    threshold: 1
+
+    threshold: 0.3
 })
 
 // Here we loop over all the sections and make them observed by the observer
 sections.forEach(function addToTheObserver(section) {
-    observer.observe(section)
+    observer.observe(section);
 })
-
