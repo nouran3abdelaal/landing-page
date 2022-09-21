@@ -1,6 +1,11 @@
+//Creating a fragment object to improve the performance
 const myDocFrag = document.createDocumentFragment();
-const sections = document.querySelectorAll("section"); // Getting all the sections
-const nav_list = document.querySelector("#navbar__list"); // Getting the navbar list
+
+// Getting all the sections
+const sections = document.querySelectorAll("section");
+
+// Getting the navbar list
+const nav_list = document.querySelector("#navbar__list");
 
 /*
 build the nav bar by creating a number of achor tags in li elements
@@ -22,11 +27,11 @@ for (const section of sections) {
     li.appendChild(a_tag);
     myDocFrag.appendChild(li);
 }
-
 nav_list.appendChild(myDocFrag);
 
 
-// Add class 'active' to section when near top of viewport and for the corresponding a link in the nav bar
+// Add class 'active' to section when near top of viewport
+// and for the corresponding a link in the nav bar
 const observer = new IntersectionObserver(function (entities) {
     entities.forEach(entity => {
         //console.log("entity"+entity.target);
